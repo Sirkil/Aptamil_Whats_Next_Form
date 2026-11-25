@@ -43,11 +43,11 @@ body { margin: 0; }
 .poster {
   position: relative;
   flex: none;
-  width: min(100vw, 46.2085vh);
-  width: min(100vw, 46.2085dvh);
-  aspect-ratio: 1170 / 2532;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
-  container-type: inline-size;
+  container-type: size;
   background: linear-gradient(#cbe8fb, #f5fbff 70%, #fff);
 }
 
@@ -60,9 +60,9 @@ body { margin: 0; }
   pointer-events: none;
 }
 
-.header-gradient { top: 0; left: 0; width: 100%; }
-.sky-wave { top: 21.76%; left: 0; width: 100%; }
-.logo { top: 8.29%; left: 28.21%; width: 43.59%; }
+.header-gradient { top: 0; left: 0; width: 100%; height: 39.1%; object-fit: fill; }
+.sky-wave { top: 21.76%; left: 0; width: 100%; height: 43.56%; object-fit: fill; }
+.logo { top: 8.29%; left: 50%; width: min(43.59%, 21dvh); transform: translateX(-50%); }
 .content { position: absolute; inset: 0; }
 
 .question {
@@ -85,11 +85,11 @@ body { margin: 0; }
   line-height: 1;
 }
 
-.lead { top: 34.9%; font-size: 7.1cqw; font-weight: 500; }
-.brand { top: 38.8%; font-size: 13.1cqw; font-weight: 700; }
-.innovation { top: 45.8%; font-size: 7.1cqw; font-weight: 500; }
-.nutrition { top: 50%; font-size: 7.2cqw; font-weight: 700; }
-.closing { top: 54.4%; font-size: 7.2cqw; font-weight: 500; }
+.lead { top: 34.9%; font-size: min(7.1cqw, 3.763cqh); font-weight: 500; }
+.brand { top: 38.8%; font-size: min(13.1cqw, 6.943cqh); font-weight: 700; }
+.innovation { top: 45.8%; font-size: min(7.1cqw, 3.763cqh); font-weight: 500; }
+.nutrition { top: 50%; font-size: min(7.2cqw, 3.816cqh); font-weight: 700; }
+.closing { top: 54.4%; font-size: min(7.2cqw, 3.816cqh); font-weight: 500; }
 
 .idea-form { position: absolute; inset: 0; }
 
@@ -155,7 +155,7 @@ body { margin: 0; }
   margin: 0;
   color: #07349d;
   text-align: center;
-  font-size: 3.1cqw;
+  font-size: min(3.1cqw, 1.643cqh);
   font-weight: 500;
   white-space: nowrap;
 }
@@ -186,7 +186,6 @@ body { margin: 0; }
     grid-template-columns: 42% 58%;
     width: 100%;
     height: 100%;
-    aspect-ratio: auto;
     container-type: normal;
   }
 
