@@ -1,6 +1,27 @@
+@font-face {
+  font-family: Poppins;
+  src: url('assets/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url('assets/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url('assets/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
 :root {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #062e9d;
+  font-family: Poppins, Arial, sans-serif;
+  color: #07349d;
   background: #fff;
 }
 
@@ -10,48 +31,67 @@ html, body { width: 100%; height: 100%; overflow: hidden; }
 body { margin: 0; }
 
 .page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   height: 100vh;
   height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 }
 
 .poster {
   position: relative;
+  flex: none;
   width: min(100vw, 46.2085vh);
   width: min(100vw, 46.2085dvh);
   aspect-ratio: 1170 / 2532;
+  overflow: hidden;
   container-type: inline-size;
-  flex: none;
+  background: linear-gradient(#cbe8fb, #f5fbff 70%, #fff);
 }
 
-.artwork {
+.header-gradient,
+.sky-wave,
+.logo {
+  position: absolute;
   display: block;
-  width: 100%;
   height: auto;
+  pointer-events: none;
 }
 
+.header-gradient { top: 0; left: 0; width: 100%; }
+.sky-wave { top: 21.76%; left: 0; width: 100%; }
+.logo { top: 8.29%; left: 28.21%; width: 43.59%; }
 .content { position: absolute; inset: 0; }
-.landscape-brand, .footer { display: none; }
 
 .question {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  inset: 0;
+  margin: 0;
+  color: #07349d;
+  font-weight: 500;
+  letter-spacing: -.025em;
+  text-align: center;
+  pointer-events: none;
 }
 
-.idea-form {
+.question .line {
   position: absolute;
-  inset: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 1;
 }
+
+.lead { top: 34.9%; font-size: 7.1cqw; font-weight: 500; }
+.brand { top: 38.8%; font-size: 13.1cqw; font-weight: 700; }
+.innovation { top: 45.8%; font-size: 7.1cqw; font-weight: 500; }
+.nutrition { top: 50%; font-size: 7.2cqw; font-weight: 700; }
+.closing { top: 54.4%; font-size: 7.2cqw; font-weight: 500; }
+
+.idea-form { position: absolute; inset: 0; }
 
 #idea {
   position: absolute;
@@ -67,7 +107,7 @@ body { margin: 0; }
   background: #fff;
   box-shadow: 0 2cqw 3cqw rgba(33, 75, 133, .13);
   color: #06349c;
-  font: 400 clamp(16px, 3.5cqw, 21px)/1.35 Arial, Helvetica, sans-serif;
+  font: 400 clamp(16px, 3.5cqw, 21px)/1.35 Poppins, Arial, sans-serif;
 }
 
 #idea:focus-visible {
@@ -81,24 +121,18 @@ body { margin: 0; }
   top: 75.1%;
   width: 32.6%;
   height: 4.1%;
+  min-height: 32px;
   padding: 0;
   border: 0;
   border-radius: 999px;
   background: linear-gradient(100deg, #032eaf, #3485eb);
   color: #fff;
-  font: 700 clamp(14px, 3.5cqw, 22px)/1 Arial, Helvetica, sans-serif;
+  font: 700 clamp(14px, 3.5cqw, 22px)/1 Poppins, Arial, sans-serif;
   cursor: pointer;
 }
 
-#submit-button:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: -6px;
-}
-
-#submit-button:disabled {
-  cursor: wait;
-  opacity: .78;
-}
+#submit-button:focus-visible { outline: 3px solid #fff; outline-offset: -6px; }
+#submit-button:disabled { cursor: wait; opacity: .78; }
 
 .status {
   position: absolute;
@@ -108,12 +142,23 @@ body { margin: 0; }
   margin: 0;
   color: #06349c;
   text-align: center;
-  font: 600 clamp(14px, 3cqw, 18px)/1.3 Arial, Helvetica, sans-serif;
+  font: 500 clamp(14px, 3cqw, 18px)/1.3 Poppins, Arial, sans-serif;
 }
 
 .status:empty { display: none; }
-
 .status.error { color: #a12333; }
+
+.footer {
+  position: absolute;
+  bottom: 3.4%;
+  width: 100%;
+  margin: 0;
+  color: #07349d;
+  text-align: center;
+  font-size: 3.1cqw;
+  font-weight: 500;
+  white-space: nowrap;
+}
 
 .visually-hidden {
   position: absolute;
@@ -145,20 +190,25 @@ body { margin: 0; }
     container-type: normal;
   }
 
-  .artwork { display: none; }
+  .header-gradient {
+    width: 42%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 
-  .landscape-brand {
-    display: block;
-    min-width: 0;
-    background-color: #06349c;
-    background-image: url('assets/whats-next-design.jpg');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: auto 330%;
+  .sky-wave { display: none; }
+
+  .logo {
+    top: 50%;
+    left: 21%;
+    width: min(26%, 400px);
+    transform: translate(-50%, -50%);
   }
 
   .content {
     position: relative;
+    grid-column: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -170,21 +220,21 @@ body { margin: 0; }
 
   .question {
     position: static;
-    width: auto;
-    height: auto;
     margin: 0;
-    overflow: visible;
-    clip: auto;
-    white-space: normal;
-    text-align: center;
-    color: #07349d;
+    pointer-events: auto;
     font-size: clamp(22px, 3vw, 58px);
-    font-weight: 400;
     line-height: 1.08;
   }
 
-  .question span, .question strong { display: block; }
-  .question strong { font-size: 1.3em; }
+  .question .line {
+    position: static;
+    width: auto;
+    white-space: normal;
+    font-size: 1em;
+    line-height: 1.08;
+  }
+
+  .question .brand { font-size: 1.3em; }
 
   .idea-form {
     position: static;
@@ -210,40 +260,32 @@ body { margin: 0; }
     position: static;
     width: clamp(130px, 35%, 270px);
     height: clamp(42px, 8vh, 64px);
+    min-height: 42px;
     font-size: clamp(16px, 2.3vw, 28px);
   }
 
-  .status {
-    position: static;
-    width: 100%;
-    font-size: clamp(14px, 1.7vw, 18px);
-  }
-
-  .footer {
-    display: block;
-    margin: 0;
-    text-align: center;
-    font-size: clamp(13px, 1.7vw, 22px);
-  }
+  .status { position: static; width: 100%; font-size: clamp(14px, 1.7vw, 18px); }
+  .footer { position: static; font-size: clamp(13px, 1.7vw, 22px); }
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
   .content { gap: 7px; padding: 10px 20px; }
   .question { font-size: clamp(17px, 2.5vw, 28px); line-height: 1; }
-  .question strong { font-size: 1.14em; }
+  .question .line { line-height: 1; }
+  .question .brand { font-size: 1.14em; }
   .idea-form { gap: 7px; }
   #idea { height: clamp(44px, 13vh, 70px); padding: 7px 11px; border-radius: 12px; }
-  #submit-button { height: 38px; }
+  #submit-button { height: 42px; }
   .footer { display: none; }
 }
 
 @media (orientation: landscape) and (max-height: 260px) {
   .poster { grid-template-columns: 1fr; }
-  .landscape-brand { display: none; }
-  .content { gap: 4px; padding: 4px 10px; }
+  .header-gradient, .logo { display: none; }
+  .content { grid-column: 1; gap: 4px; padding: 4px 10px; }
   .question { font-size: 15px; }
-  .question strong { font-size: 1.05em; }
+  .question .brand { font-size: 1.05em; }
   .idea-form { gap: 4px; }
   #idea { height: 38px; padding: 5px 9px; }
-  #submit-button { height: 32px; }
+  #submit-button { height: 32px; min-height: 32px; }
 }

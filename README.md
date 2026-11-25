@@ -1,6 +1,6 @@
 # Aptamil What's Next form
 
-`index.html` is a static, mobile-first page matching the supplied design. The answer box and Submit button are live controls over the supplied artwork. The portrait poster scales to fit the visible screen without page scrolling; landscape screens use a wider layout with live text and controls.
+`index.html` is a static, mobile-first page rebuilt from separate layers of the supplied PSD: the Aptamil logo, blue header gradient, and curved wave. The question, answer box, Submit button, and footer are live HTML. The portrait layout fits the visible screen without page scrolling; landscape screens use a wider layout.
 
 ## Connect the Google Sheet and Apps Script
 
