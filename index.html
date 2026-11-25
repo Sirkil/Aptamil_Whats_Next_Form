@@ -14,16 +14,24 @@
     <main class="page">
       <section class="poster" aria-labelledby="question">
         <img class="artwork" src="assets/whats-next-design.jpg" alt="" aria-hidden="true" />
-        <h1 id="question" class="visually-hidden">What do you think Aptamil's next innovation in infant nutrition will be?</h1>
+        <div class="landscape-brand" aria-hidden="true"></div>
+        <div class="content">
+          <h1 id="question" class="question">
+            <span>What do you think</span>
+            <strong>Aptamil’s</strong>
+            <span>next innovation in infant nutrition will be?</span>
+          </h1>
 
-        <form id="idea-form" class="idea-form" method="post" target="submission-frame" novalidate>
-          <label for="idea" class="visually-hidden">Your idea</label>
-          <textarea id="idea" name="response" maxlength="1000" required aria-required="true"></textarea>
-          <input type="hidden" name="requestId" id="request-id" />
-          <button id="submit-button" type="submit">Submit</button>
-        </form>
+          <form id="idea-form" class="idea-form" method="post" target="submission-frame" novalidate>
+            <label for="idea" class="visually-hidden">Your idea</label>
+            <textarea id="idea" name="response" maxlength="1000" required aria-required="true"></textarea>
+            <input type="hidden" name="requestId" id="request-id" />
+            <button id="submit-button" type="submit">Submit</button>
+          </form>
 
-        <p id="status" class="status" role="status" aria-live="polite"></p>
+          <p id="status" class="status" role="status" aria-live="polite"></p>
+          <p class="footer">Aptamil <span aria-hidden="true">·</span> Innovation Pavilion</p>
+        </div>
       </section>
     </main>
     <iframe class="submission-frame" name="submission-frame" title="Submission result"></iframe>

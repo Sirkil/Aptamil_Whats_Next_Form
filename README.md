@@ -1,6 +1,6 @@
 # Aptamil What's Next form
 
-`index.html` is a static, mobile-first page matching the supplied design. The answer box and Submit button are live controls over the supplied artwork.
+`index.html` is a static, mobile-first page matching the supplied design. The answer box and Submit button are live controls over the supplied artwork. The portrait poster scales to fit the visible screen without page scrolling; landscape screens use a wider layout with live text and controls.
 
 ## Connect the Google Sheet and Apps Script
 
